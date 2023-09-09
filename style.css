@@ -1,0 +1,78 @@
+:root {
+  --orange: #cf4520;
+  --yellow: #f2cd00;
+  --red: #cf4520;
+  --blue: #5268c2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+main {
+  display: flex;
+
+  & > article {
+    min-width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:nth-child(3n + 2) {
+      background: var(--yellow);
+    }
+    &:nth-child(3n) {
+      background: var(--red);
+    }
+    &:nth-child(3n + 1) {
+      background: var(--blue);
+    }
+
+    & > h1 {
+      font: 100 7vw "Poiret One";
+      letter-spacing: -0.07em;
+      color: white;
+      cursor: pointer;
+    }
+    & > video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+      /* position: fixed; */
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    &.cover {
+      background: white;
+      & > video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+      }
+      & > h1 {
+        /* color: var(--orange);
+         */
+        color: white;
+        cursor: default;
+        z-index: 5;
+      }
+    }
+  }
+}
